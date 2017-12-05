@@ -8,14 +8,13 @@ desc "Runs all the tests"
 lane :test do
     scan(scheme: "CaronaDev")
     slather(
-        output_directory: "coverage",
-        workspace: "Carona.xcworkspace",
+        build_directory: "Coverage",
+        input_format: "CaronaInput",
         scheme: "CaronaDev",
         proj: "Carona.xcodeproj",
+        ignore: ["**/Storyboard.swift"],
         html: true,
-        ignore: [
-            "**/Storyboard.swift"
-        ]
+        show: true
     )
 end
 
