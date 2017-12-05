@@ -10,6 +10,10 @@
 		2653414EB0ECF6FF1EE02BF9 /* Pods_CaronaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F5738563358F098408BB47 /* Pods_CaronaTests.framework */; };
 		3D6C3AF2A4439C9A90C38385 /* Pods_Carona.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA8CEEBB215C1FD247DC960A /* Pods_Carona.framework */; };
 		4B0766B151DEED067A3A01E3 /* Pods_CaronaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68DD1BC63E7C8CDC080342D0 /* Pods_CaronaUITests.framework */; };
+		FC49C0641FD7266500C71442 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FC49C05F1FD7266500C71442 /* README.md */; };
+		FC49C0651FD7266500C71442 /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = FC49C0611FD7266500C71442 /* Appfile */; };
+		FC49C0661FD7266500C71442 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = FC49C0621FD7266500C71442 /* Fastfile */; };
+		FC49C0671FD7266500C71442 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FC49C0631FD7266500C71442 /* .gitignore */; };
 		FC4E3BCB1FD721FD00CA32F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E3BCA1FD721FD00CA32F0 /* AppDelegate.swift */; };
 		FC4E3BCD1FD721FD00CA32F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E3BCC1FD721FD00CA32F0 /* ViewController.swift */; };
 		FC4E3BD01FD721FD00CA32F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC4E3BCE1FD721FD00CA32F0 /* Main.storyboard */; };
@@ -47,6 +51,10 @@
 		AD598F00A9B622C43F8F38DA /* Pods-CaronaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaronaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CaronaTests/Pods-CaronaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EA8CEEBB215C1FD247DC960A /* Pods_Carona.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Carona.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF993EDA1C428BB71CB6CA77 /* Pods-Carona.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carona.release.xcconfig"; path = "Pods/Target Support Files/Pods-Carona/Pods-Carona.release.xcconfig"; sourceTree = "<group>"; };
+		FC49C05F1FD7266500C71442 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FC49C0611FD7266500C71442 /* Appfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Appfile; sourceTree = "<group>"; };
+		FC49C0621FD7266500C71442 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
+		FC49C0631FD7266500C71442 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FC4E3BC71FD721FD00CA32F0 /* Carona.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carona.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC4E3BCA1FD721FD00CA32F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC4E3BCC1FD721FD00CA32F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,9 +112,29 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		FC49C05E1FD7264700C71442 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				FC49C0601FD7266500C71442 /* fastlane */,
+				FC49C05F1FD7266500C71442 /* README.md */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+		FC49C0601FD7266500C71442 /* fastlane */ = {
+			isa = PBXGroup;
+			children = (
+				FC49C0611FD7266500C71442 /* Appfile */,
+				FC49C0621FD7266500C71442 /* Fastfile */,
+				FC49C0631FD7266500C71442 /* .gitignore */,
+			);
+			path = fastlane;
+			sourceTree = "<group>";
+		};
 		FC4E3BBE1FD721FD00CA32F0 = {
 			isa = PBXGroup;
 			children = (
+				FC49C05E1FD7264700C71442 /* Documentation */,
 				FC4E3BC91FD721FD00CA32F0 /* Carona */,
 				FC4E3BDE1FD721FD00CA32F0 /* CaronaTests */,
 				FC4E3BE91FD721FD00CA32F0 /* CaronaUITests */,
@@ -292,8 +320,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC49C0671FD7266500C71442 /* .gitignore in Resources */,
+				FC49C0651FD7266500C71442 /* Appfile in Resources */,
+				FC49C0661FD7266500C71442 /* Fastfile in Resources */,
 				FC4E3BD51FD721FD00CA32F0 /* LaunchScreen.storyboard in Resources */,
 				FC4E3BFA1FD7241200CA32F0 /* Configuration.plist in Resources */,
+				FC49C0641FD7266500C71442 /* README.md in Resources */,
 				FC4E3BD21FD721FD00CA32F0 /* Assets.xcassets in Resources */,
 				FC4E3BD01FD721FD00CA32F0 /* Main.storyboard in Resources */,
 			);
