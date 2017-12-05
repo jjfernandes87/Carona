@@ -1,0 +1,21 @@
+PODS:
+  - ConfigurationProvider (0.0.10)
+
+DEPENDENCIES:
+  - ConfigurationProvider (from `https://github.com/jjfernandes87/ConfigurationProvider.git`)
+
+EXTERNAL SOURCES:
+  ConfigurationProvider:
+    :git: https://github.com/jjfernandes87/ConfigurationProvider.git
+
+CHECKOUT OPTIONS:
+  ConfigurationProvider:
+    :commit: 23b5893446515613eb91184b3d8bce6471fc681e
+    :git: https://github.com/jjfernandes87/ConfigurationProvider.git
+
+SPEC CHECKSUMS:
+  ConfigurationProvider: 2ea6d1f6ffc458b922523e4787c18c949d3057ca
+
+PODFILE CHECKSUM: 021a49a41727ba8ea1071af0390c10036cfc92ca
+
+COCOAPODS: 1.3.0
