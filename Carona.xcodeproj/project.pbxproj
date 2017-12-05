@@ -17,6 +17,7 @@
 		FC4E3BD51FD721FD00CA32F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC4E3BD31FD721FD00CA32F0 /* LaunchScreen.storyboard */; };
 		FC4E3BE01FD721FD00CA32F0 /* CaronaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E3BDF1FD721FD00CA32F0 /* CaronaTests.swift */; };
 		FC4E3BEB1FD721FD00CA32F0 /* CaronaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E3BEA1FD721FD00CA32F0 /* CaronaUITests.swift */; };
+		FC4E3BFA1FD7241200CA32F0 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC4E3BF91FD7241200CA32F0 /* Configuration.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		FC4E3BE61FD721FD00CA32F0 /* CaronaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaronaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC4E3BEA1FD721FD00CA32F0 /* CaronaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaronaUITests.swift; sourceTree = "<group>"; };
 		FC4E3BEC1FD721FD00CA32F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC4E3BF91FD7241200CA32F0 /* Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 		FC4E3BC91FD721FD00CA32F0 /* Carona */ = {
 			isa = PBXGroup;
 			children = (
+				FC4E3BF81FD723E400CA32F0 /* Configurations */,
 				FC4E3BCA1FD721FD00CA32F0 /* AppDelegate.swift */,
 				FC4E3BCC1FD721FD00CA32F0 /* ViewController.swift */,
 				FC4E3BCE1FD721FD00CA32F0 /* Main.storyboard */,
@@ -153,6 +156,14 @@
 				FC4E3BEC1FD721FD00CA32F0 /* Info.plist */,
 			);
 			path = CaronaUITests;
+			sourceTree = "<group>";
+		};
+		FC4E3BF81FD723E400CA32F0 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				FC4E3BF91FD7241200CA32F0 /* Configuration.plist */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 		FF08538D713E3104372B2D21 /* Frameworks */ = {
@@ -282,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC4E3BD51FD721FD00CA32F0 /* LaunchScreen.storyboard in Resources */,
+				FC4E3BFA1FD7241200CA32F0 /* Configuration.plist in Resources */,
 				FC4E3BD21FD721FD00CA32F0 /* Assets.xcassets in Resources */,
 				FC4E3BD01FD721FD00CA32F0 /* Main.storyboard in Resources */,
 			);
