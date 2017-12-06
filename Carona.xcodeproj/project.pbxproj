@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2653414EB0ECF6FF1EE02BF9 /* Pods_CaronaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F5738563358F098408BB47 /* Pods_CaronaTests.framework */; };
 		3D6C3AF2A4439C9A90C38385 /* Pods_Carona.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA8CEEBB215C1FD247DC960A /* Pods_Carona.framework */; };
+		43B6C05C1FD80A9F0019658D /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 43B6C05A1FD80A9F0019658D /* Gemfile.lock */; };
+		43B6C05D1FD80A9F0019658D /* Gemfile in Resources */ = {isa = PBXBuildFile; fileRef = 43B6C05B1FD80A9F0019658D /* Gemfile */; };
 		4B0766B151DEED067A3A01E3 /* Pods_CaronaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68DD1BC63E7C8CDC080342D0 /* Pods_CaronaUITests.framework */; };
 		FC49C0641FD7266500C71442 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FC49C05F1FD7266500C71442 /* README.md */; };
 		FC49C0651FD7266500C71442 /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = FC49C0611FD7266500C71442 /* Appfile */; };
@@ -44,6 +46,8 @@
 /* Begin PBXFileReference section */
 		0727EB3B8C14BE16117E03FC /* Pods-CaronaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaronaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CaronaUITests/Pods-CaronaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1A17D18D1EBCDCC5B0BB436E /* Pods-CaronaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaronaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CaronaTests/Pods-CaronaTests.release.xcconfig"; sourceTree = "<group>"; };
+		43B6C05A1FD80A9F0019658D /* Gemfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
+		43B6C05B1FD80A9F0019658D /* Gemfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		6664C82C89582265C40A5140 /* Pods-Carona.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carona.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Carona/Pods-Carona.debug.xcconfig"; sourceTree = "<group>"; };
 		68DD1BC63E7C8CDC080342D0 /* Pods_CaronaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaronaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88F5738563358F098408BB47 /* Pods_CaronaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaronaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +121,8 @@
 			children = (
 				FC49C0601FD7266500C71442 /* fastlane */,
 				FC49C05F1FD7266500C71442 /* README.md */,
+				43B6C05B1FD80A9F0019658D /* Gemfile */,
+				43B6C05A1FD80A9F0019658D /* Gemfile.lock */,
 			);
 			name = Documentation;
 			sourceTree = "<group>";
@@ -320,7 +326,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43B6C05C1FD80A9F0019658D /* Gemfile.lock in Resources */,
 				FC49C0671FD7266500C71442 /* .gitignore in Resources */,
+				43B6C05D1FD80A9F0019658D /* Gemfile in Resources */,
 				FC49C0651FD7266500C71442 /* Appfile in Resources */,
 				FC49C0661FD7266500C71442 /* Fastfile in Resources */,
 				FC4E3BD51FD721FD00CA32F0 /* LaunchScreen.storyboard in Resources */,
@@ -606,7 +614,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -657,7 +665,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -673,6 +681,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6BPH8672S8;
 				INFOPLIST_FILE = Carona/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.jjfernandes87.Carona;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -689,6 +698,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6BPH8672S8;
 				INFOPLIST_FILE = Carona/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.jjfernandes87.Carona;
 				PRODUCT_NAME = "$(TARGET_NAME)";
