@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2653414EB0ECF6FF1EE02BF9 /* Pods_CaronaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F5738563358F098408BB47 /* Pods_CaronaTests.framework */; };
 		3D6C3AF2A4439C9A90C38385 /* Pods_Carona.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA8CEEBB215C1FD247DC960A /* Pods_Carona.framework */; };
+		435F9D7A1FDAB9AA00100135 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435F9D791FDAB9AA00100135 /* SnapshotHelper.swift */; };
+		435F9D7C1FDABAA500100135 /* Snapfile in Resources */ = {isa = PBXBuildFile; fileRef = 435F9D7B1FDABAA400100135 /* Snapfile */; };
 		43B6C05C1FD80A9F0019658D /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 43B6C05A1FD80A9F0019658D /* Gemfile.lock */; };
 		43B6C05D1FD80A9F0019658D /* Gemfile in Resources */ = {isa = PBXBuildFile; fileRef = 43B6C05B1FD80A9F0019658D /* Gemfile */; };
 		4B0766B151DEED067A3A01E3 /* Pods_CaronaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68DD1BC63E7C8CDC080342D0 /* Pods_CaronaUITests.framework */; };
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		0727EB3B8C14BE16117E03FC /* Pods-CaronaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaronaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CaronaUITests/Pods-CaronaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1A17D18D1EBCDCC5B0BB436E /* Pods-CaronaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaronaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CaronaTests/Pods-CaronaTests.release.xcconfig"; sourceTree = "<group>"; };
+		435F9D791FDAB9AA00100135 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		435F9D7B1FDABAA400100135 /* Snapfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Snapfile; sourceTree = "<group>"; };
 		43B6C05A1FD80A9F0019658D /* Gemfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
 		43B6C05B1FD80A9F0019658D /* Gemfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		6664C82C89582265C40A5140 /* Pods-Carona.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carona.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Carona/Pods-Carona.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 		FC49C0601FD7266500C71442 /* fastlane */ = {
 			isa = PBXGroup;
 			children = (
+				435F9D7B1FDABAA400100135 /* Snapfile */,
 				FC49C0611FD7266500C71442 /* Appfile */,
 				FC49C0621FD7266500C71442 /* Fastfile */,
 				FC49C0631FD7266500C71442 /* .gitignore */,
@@ -186,6 +191,7 @@
 		FC4E3BE91FD721FD00CA32F0 /* CaronaUITests */ = {
 			isa = PBXGroup;
 			children = (
+				435F9D791FDAB9AA00100135 /* SnapshotHelper.swift */,
 				FC4E3BEA1FD721FD00CA32F0 /* CaronaUITests.swift */,
 				FC4E3BEC1FD721FD00CA32F0 /* Info.plist */,
 			);
@@ -350,6 +356,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				435F9D7C1FDABAA500100135 /* Snapfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +535,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC4E3BEB1FD721FD00CA32F0 /* CaronaUITests.swift in Sources */,
+				435F9D7A1FDAB9AA00100135 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

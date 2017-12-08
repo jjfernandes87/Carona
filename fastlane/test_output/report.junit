@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <testsuites name='CaronaTests.xctest' tests='3' failures='0'>
   <testsuite name='CaronaUITests.CaronaUITests' tests='1' failures='0'>
-    <testcase classname='CaronaUITests.CaronaUITests' name='testExample' time='4.524'/>
+    <testcase classname='CaronaUITests.CaronaUITests' name='testExample' time='3.708'/>
   </testsuite>
   <testsuite name='CaronaTests.CaronaTests' tests='2' failures='0'>
-    <testcase classname='CaronaTests.CaronaTests' name='testExample' time='0.001'/>
-    <testcase classname='CaronaTests.CaronaTests' name='testPerformanceExample' time='0.315'/>
+    <testcase classname='CaronaTests.CaronaTests' name='testExample' time='0.000'/>
+    <testcase classname='CaronaTests.CaronaTests' name='testPerformanceExample' time='0.343'/>
   </testsuite>
 </testsuites>
