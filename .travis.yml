@@ -6,5 +6,10 @@ cache:
 before_install:
 - bundle install
 - pod repo update
-script:
-- fastlane test;
+master:
+  script: 
+    - fastlane test;
+    - fastlane screenshots;
+development:
+  script: 
+    - fastlane test;
