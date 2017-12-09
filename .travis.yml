@@ -8,12 +8,8 @@ before_install:
 - pod repo update
 script:
 - fastlane test;
-# Versões de produção para Release na AppStore
-- if [ $TRAVIS_BRANCH == "master" ]; then
-  fastlane screenshots;
-fi
 
 # Versões de desenvolvimento subindo para TestFlight
-- if [ $TRAVIS_BRANCH == "desenv" ]; then
-  fastlane beta;
-fi
+  - if [ $POD_LINT == "YES" ]; then
+      fastlane beta;
+    fi
