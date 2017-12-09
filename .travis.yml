@@ -6,10 +6,9 @@ cache:
 before_install:
 - bundle install
 - pod repo update
-master:
-  script: 
-    - fastlane test;
-    - fastlane screenshots;
-development:
-  script: 
-    - fastlane test;
+
+script:
+- fastlane test;
+- if [ "${TRAVIS_BRANCH}" = "master" ]; then
+  fastlane screenshots
+fi
