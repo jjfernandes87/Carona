@@ -8,8 +8,3 @@ before_install:
 - pod repo update
 script:
 - fastlane test;
-
-# Versões de desenvolvimento subindo para TestFlight
-  - if [ $TRAVIS_BRANCH == "master" ]; then
-      fastlane screenshots;
-    fi
