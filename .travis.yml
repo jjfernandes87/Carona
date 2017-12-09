@@ -7,4 +7,14 @@ before_install:
 - bundle install
 - pod repo update
 script:
-- fastlane test
+- fastlane test;
+
+# Versões de produção para Release na AppStore
+- if [ $TRAVIS_BRANCH == "master" ]; then
+  fastlane screenshots;
+fi
+
+# Versões de desenvolvimento subindo para TestFlight
+- if [ $TRAVIS_BRANCH == "desenv" ]; then
+  fastlane beta;
+fi
