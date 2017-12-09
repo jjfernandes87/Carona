@@ -38,7 +38,8 @@ end
 
 desc "Deploy a new version to the App Store"
 lane :release do
-    sync_code_signing
+    # Ensure that your git status is not dirty
+    ensure_git_status_clean
 
     # snapshot
     capture_screenshots(reinstall_app: true, app_identifier: "br.com.jjfernandes87.Carona", skip_open_summary: true)
@@ -52,3 +53,27 @@ lane :release do
     deliver(force: true)
     # frameit
 end
+
+desc "Take a screenshots"
+lane :screenshots do
+    capture_screenshots(reinstall_app: true, app_identifier: "br.com.jjfernandes87.Carona", skip_open_summary: true )
+    update_app_info(skip_screenshots: false, skip_metadata: false, submit_for_review: false)
+end
+
+private_lane :update_app_info do |options|
+
+    skip_screenshots = options[:skip_screenshots]
+    skip_metadata = options[:skip_metadata]
+    submit_for_review = options[:submit_for_review]
+
+    # Upload the build to iTunes Connect.
+    deliver(
+        force: true,
+        ignore_language_directory_validation: true,
+        skip_binary_upload: true,
+        skip_screenshots: skip_screenshots,
+        skip_metadata: skip_metadata,
+        submit_for_review: submit_for_review
+    )
+end
+
