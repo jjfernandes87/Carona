@@ -13,7 +13,7 @@ languages([
 ])
 
 # The name of the scheme which contains the UI Tests
-scheme "CaronaDev"
+scheme "Carona - Debug"
 
 # Where should the resulting screenshots be stored?
 output_directory "./fastlane/screenshots"
@@ -21,7 +21,6 @@ output_directory "./fastlane/screenshots"
 #clear_previous_screenshots true # remove the '#' to clear all previously generated screenshots before creating new ones
 
 # Choose which project/workspace to use
-# project "./Project.xcodeproj"
 workspace "./Carona.xcworkspace"
 
 # Arguments to pass to the app on launch. See https://docs.fastlane.tools/actions/snapshot/#launch-arguments
