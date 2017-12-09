@@ -10,6 +10,6 @@ script:
 - fastlane test;
 
 # Versões de desenvolvimento subindo para TestFlight
-  - if [ $POD_LINT == "YES" ]; then
-      fastlane beta;
+  - if [ $TRAVIS_BRANCH == "master" ]; then
+      fastlane screenshots;
     fi
