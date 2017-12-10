@@ -9,6 +9,4 @@ before_install:
 
 script:
 - fastlane test;
-- if [ "${TRAVIS_BRANCH}" == "master" ]; then
-  fastlane screenshots
-fi
+- if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then fastlane screenshots; fi
