@@ -14,12 +14,14 @@
 		43B6C05C1FD80A9F0019658D /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 43B6C05A1FD80A9F0019658D /* Gemfile.lock */; };
 		43B6C05D1FD80A9F0019658D /* Gemfile in Resources */ = {isa = PBXBuildFile; fileRef = 43B6C05B1FD80A9F0019658D /* Gemfile */; };
 		4B0766B151DEED067A3A01E3 /* Pods_CaronaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68DD1BC63E7C8CDC080342D0 /* Pods_CaronaUITests.framework */; };
+		865159CE201A0A5C005E0663 /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865159CD201A0A5C005E0663 /* EmptyViewController.swift */; };
+		865159D0201A0E87005E0663 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865159CF201A0E87005E0663 /* AppDelegateTests.swift */; };
+		86FFA25D201A05AD00B820BA /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FFA25C201A05AD00B820BA /* MainRouter.swift */; };
 		FC49C0641FD7266500C71442 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FC49C05F1FD7266500C71442 /* README.md */; };
 		FC49C0651FD7266500C71442 /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = FC49C0611FD7266500C71442 /* Appfile */; };
 		FC49C0661FD7266500C71442 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = FC49C0621FD7266500C71442 /* Fastfile */; };
 		FC49C0671FD7266500C71442 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FC49C0631FD7266500C71442 /* .gitignore */; };
 		FC4E3BCB1FD721FD00CA32F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E3BCA1FD721FD00CA32F0 /* AppDelegate.swift */; };
-		FC4E3BCD1FD721FD00CA32F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4E3BCC1FD721FD00CA32F0 /* ViewController.swift */; };
 		FC4E3BD01FD721FD00CA32F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC4E3BCE1FD721FD00CA32F0 /* Main.storyboard */; };
 		FC4E3BD21FD721FD00CA32F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC4E3BD11FD721FD00CA32F0 /* Assets.xcassets */; };
 		FC4E3BD51FD721FD00CA32F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC4E3BD31FD721FD00CA32F0 /* LaunchScreen.storyboard */; };
@@ -86,6 +88,9 @@
 		43B6C05B1FD80A9F0019658D /* Gemfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		6664C82C89582265C40A5140 /* Pods-Carona.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carona.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Carona/Pods-Carona.debug.xcconfig"; sourceTree = "<group>"; };
 		68DD1BC63E7C8CDC080342D0 /* Pods_CaronaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaronaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		865159CD201A0A5C005E0663 /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
+		865159CF201A0E87005E0663 /* AppDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateTests.swift; sourceTree = "<group>"; };
+		86FFA25C201A05AD00B820BA /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		88F5738563358F098408BB47 /* Pods_CaronaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaronaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC272475C6D9B44A7825071 /* Pods-CaronaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaronaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CaronaUITests/Pods-CaronaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD598F00A9B622C43F8F38DA /* Pods-CaronaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaronaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CaronaTests/Pods-CaronaTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,11 +98,10 @@
 		EF993EDA1C428BB71CB6CA77 /* Pods-Carona.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carona.release.xcconfig"; path = "Pods/Target Support Files/Pods-Carona/Pods-Carona.release.xcconfig"; sourceTree = "<group>"; };
 		FC49C05F1FD7266500C71442 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FC49C0611FD7266500C71442 /* Appfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Appfile; sourceTree = "<group>"; };
-		FC49C0621FD7266500C71442 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
+		FC49C0621FD7266500C71442 /* Fastfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Fastfile; sourceTree = "<group>"; };
 		FC49C0631FD7266500C71442 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FC4E3BC71FD721FD00CA32F0 /* Carona.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carona.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC4E3BCA1FD721FD00CA32F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FC4E3BCC1FD721FD00CA32F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FC4E3BCF1FD721FD00CA32F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC4E3BD11FD721FD00CA32F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC4E3BD41FD721FD00CA32F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -185,6 +189,40 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		865159CC201A0A42005E0663 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				865159CD201A0A5C005E0663 /* EmptyViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		86FFA258201A038900B820BA /* ApplicationBase */ = {
+			isa = PBXGroup;
+			children = (
+				FC4E3BCA1FD721FD00CA32F0 /* AppDelegate.swift */,
+				FC4E3BD61FD721FD00CA32F0 /* Info.plist */,
+			);
+			name = ApplicationBase;
+			sourceTree = "<group>";
+		};
+		86FFA259201A039E00B820BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FC4E3BCE1FD721FD00CA32F0 /* Main.storyboard */,
+				FC4E3BD31FD721FD00CA32F0 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		86FFA25B201A058300B820BA /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				86FFA25C201A05AD00B820BA /* MainRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
 		FC49C05E1FD7264700C71442 /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,13 +273,12 @@
 		FC4E3BC91FD721FD00CA32F0 /* Carona */ = {
 			isa = PBXGroup;
 			children = (
-				FC4E3BF81FD723E400CA32F0 /* Configurations */,
-				FC4E3BCA1FD721FD00CA32F0 /* AppDelegate.swift */,
-				FC4E3BCC1FD721FD00CA32F0 /* ViewController.swift */,
-				FC4E3BCE1FD721FD00CA32F0 /* Main.storyboard */,
+				865159CC201A0A42005E0663 /* ViewControllers */,
+				86FFA25B201A058300B820BA /* Routers */,
 				FC4E3BD11FD721FD00CA32F0 /* Assets.xcassets */,
-				FC4E3BD31FD721FD00CA32F0 /* LaunchScreen.storyboard */,
-				FC4E3BD61FD721FD00CA32F0 /* Info.plist */,
+				FC4E3BF81FD723E400CA32F0 /* Configurations */,
+				86FFA259201A039E00B820BA /* Views */,
+				86FFA258201A038900B820BA /* ApplicationBase */,
 			);
 			path = Carona;
 			sourceTree = "<group>";
@@ -249,6 +286,7 @@
 		FC4E3BDE1FD721FD00CA32F0 /* CaronaTests */ = {
 			isa = PBXGroup;
 			children = (
+				865159CF201A0E87005E0663 /* AppDelegateTests.swift */,
 				FC4E3BDF1FD721FD00CA32F0 /* CaronaTests.swift */,
 				FC4E3BE11FD721FD00CA32F0 /* Info.plist */,
 			);
@@ -532,10 +570,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Carona/Pods-Carona-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ConfigurationProvider/ConfigurationProvider.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/UIColor_Hex_Swift/UIColor_Hex_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ConfigurationProvider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIColor_Hex_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -678,8 +720,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC4E3BCD1FD721FD00CA32F0 /* ViewController.swift in Sources */,
+				865159CE201A0A5C005E0663 /* EmptyViewController.swift in Sources */,
 				FC4E3BCB1FD721FD00CA32F0 /* AppDelegate.swift in Sources */,
+				86FFA25D201A05AD00B820BA /* MainRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,6 +730,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				865159D0201A0E87005E0663 /* AppDelegateTests.swift in Sources */,
 				FC4E3BE01FD721FD00CA32F0 /* CaronaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

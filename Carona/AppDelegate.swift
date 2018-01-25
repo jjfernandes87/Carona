@@ -12,10 +12,34 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var mainRouter: MainRouter?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        initWindow()
+        initMainRouter()
+        runApp()
+        
         return true
     }
 
+}
+
+extension AppDelegate {
+    
+    /// Inicia a window
+    func initWindow() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+    }
+    
+    /// Inicia a rota base
+    func initMainRouter() {
+        mainRouter = MainRouter(window: window)
+    }
+    
+    func runApp() {
+        mainRouter?.run()
+    }
 }
 
