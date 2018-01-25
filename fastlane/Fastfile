@@ -4,6 +4,12 @@ generated_fastfile_id "374a945e-9ada-4130-a843-eb8e4b220bd3"
 
 default_platform :ios
 
+desc "Create certificates"
+lane :certificates do
+    match(git_url: "https://github.com/jjfernandes87/Certificates.git", type: "development", app_identifier: "br.com.jjfernandes87.Carona", readonly: true)
+    match(git_url: "https://github.com/jjfernandes87/Certificates.git", type: "appstore", app_identifier: "br.com.jjfernandes87.Carona", readonly: true)
+end
+
 desc "Runs all the tests"
 lane :test do
     scan(scheme: "Carona - Debug")
