@@ -18,43 +18,37 @@ end
 desc "Submit a new Beta Build to Apple TestFlight"
 desc "This will also make sure the profile is up to date"
 lane :beta do
-    # Ensure that your git status is not dirty
-    ensure_git_status_clean
-
+    
     # increment_build_number
-    build_number = increment_build_number(xcodeproj: "Carona.xcodeproj")
-
+    build_number = increment_build_number
+    
     # build your iOS app
     gym(scheme: "Carona - Release", workspace: "Carona.xcworkspace", include_bitcode: true)
-
+    
     # upload to Testflight
-    changelog_from_git_commits
     upload_to_testflight(skip_waiting_for_build_processing: true)
-
-    # Add a git tag for this build. This will automatically
-    # use an appropriate git tag name
-    add_git_tag
-
-    # Commit the version bump
-    commit_version_bump(message: "Deploying build #{build_number} to Testflight.", xcodeproj: "Carona.xcodeproj")
-
-    # Push the new commit and tag back to your git remote
-    push_to_git_remote(force: true)
+    
+    # commit action
+    commit_info(build_number: "#{build_number}", remote_branch: "develop")
 end
 
 desc "Deploy a new version to the App Store"
 lane :release do
-    # Ensure that your git status is not dirty
-    ensure_git_status_clean
 
     # snapshot
     capture_screenshots(reinstall_app: true, app_identifier: "br.com.jjfernandes87.Carona", skip_open_summary: true )
 
+    # increment_build_number
+    build_number = increment_build_number
+
     # build your iOS app
     build_app(scheme: "Carona - Release", workspace: "Carona.xcworkspace", include_bitcode: true)
-
+    
     # Upload the build to iTunes Connect.
     update_app_info(skip_screenshots: false, skip_metadata: false, submit_for_review: true)
+    
+    # commit action
+    commit_info(build_number: "#{build_number}", remote_branch: "master")
 end
 
 desc "Take a screenshots"
@@ -79,4 +73,23 @@ private_lane :update_app_info do |options|
         submit_for_review: submit_for_review
     )
 end
+
+desc "Send info to remote git"
+private_lane :commit_info do |options|
+    
+    build_number = options[:build_number]
+    remote_branch = options[:remote_branch]
+    
+    # commit to local repo
+    clean_build_artifacts
+    commit_version_bump(message: "[ci skip] Deploying build #{build_number}.", xcodeproj: "ZapPro.xcodeproj", force: true)
+    
+    # add tag
+    add_git_tag(grouping: "builds", prefix: "b_", build_number:"#{build_number}", force: true)
+    
+    # push to remote repo
+    push_to_git_remote(remote: "origin", local_branch: "HEAD", remote_branch: "#{remote_branch}", force: true, tags: true)
+    
+end
+
 

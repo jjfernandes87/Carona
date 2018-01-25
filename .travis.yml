@@ -8,8 +8,8 @@ before_install:
 - pod repo update
 script:
 - fastlane test;
-- if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then fastlane release; fi
-- if [ "$TRAVIS_BRANCH" = "desenv" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then fastlane beta; fi
+- if [ "$TRAVIS_BRANCH" = "desenv" -a "$TRAVIS_PULL_REQUEST" = "true" ]; then fastlane beta; fi
+- if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "true" ]; then fastlane release; fi
 env:
   global:
     secure: fT1hWtuvx3MApivjDywM7PswsSfGdb1mcGmgKRYFFJxlS1snuQVJACzJQnkdXJ2UwAC6tpOkAycWhxgnHYfcmw0a+DmPe3//i3arzhLa8S3PDzoz+WvTTh1qbgE8RmTO4QAO1Y7xcsbpcQksyHH5+ee3nnGphDeS6Uc87nilJM6gI1ok3nel3jGsAFUv07/FrRg/kTaLOelDp26sH5iSRqx/ZGs/54HnFFjroj48vGfppT6mbVoFHLg8BjzCzOowluwvDnvUnZz9WkQ6CeLEgk/WwoKxsbs+DO9+rWpywXcYnI4OJMisyYVON4pS2MI1D8tdJwSVKwQ8wC8H8O9TrNKwv7CVpPCu/W3/YGFvZi4pYfca8hPMN7ehwWMyz7qQd5sQa61nPs6yoTm+UkCAkU/KlaSHIDR8cq9iMRIwtNuVZtMMr0rfS9xzLSobQGSJdj1jyAN8ej1b1rnCgC4Om5HccfYKiUc5KyFI8aexz7nlCK7s8r+vdRuyQMEZly1T9z4/QcFJXnRZoYsSWYa0BlBhxNwiVv7bxp7X2yqXpvr6EmFruK14QZ6NyDVGqgLzFQlOwL9IVNA/0f/hrs1WU34NJh+WjN+EiKRhVn14xe9WyCQJl812dFTxA/qCqQdAIVlZ9dugtzJXrx5mskWZBm0jNGHGcg9mYhoRehZUnds=
