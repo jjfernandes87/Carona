@@ -13,11 +13,14 @@ class EmptyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        addSubviewSpinner()
+    }
+    
+    private func addSubviewSpinner() {
         let rect = CGRect(x: view.center.x - 20, y: view.center.y - 20, width: 40, height: 40)
         let spinner = NVActivityIndicatorView(frame: rect, type: .circleStrokeSpin, color: UIColor.lightGray, padding: nil)
         spinner.startAnimating()
         view.addSubview(spinner)
-        
     }
 
 }

@@ -7,6 +7,7 @@ target 'Carona' do
 
   # Pods for Carona
   pod 'ConfigurationProvider'
+  pod 'LaunchApplication'
   pod 'UIColor_Hex_Swift'
   pod 'NVActivityIndicatorView'
 

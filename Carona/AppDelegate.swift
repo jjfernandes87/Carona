@@ -22,7 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+            self.mainRouter?.loadScreens()
+        }
+    }
 }
 
 extension AppDelegate {

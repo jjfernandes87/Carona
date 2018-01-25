@@ -16,6 +16,7 @@
 		4B0766B151DEED067A3A01E3 /* Pods_CaronaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68DD1BC63E7C8CDC080342D0 /* Pods_CaronaUITests.framework */; };
 		865159CE201A0A5C005E0663 /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865159CD201A0A5C005E0663 /* EmptyViewController.swift */; };
 		865159D0201A0E87005E0663 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865159CF201A0E87005E0663 /* AppDelegateTests.swift */; };
+		86C0CE2C201A16C7001687C0 /* SnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C0CE2B201A16C7001687C0 /* SnapshotTests.swift */; };
 		86FFA25D201A05AD00B820BA /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FFA25C201A05AD00B820BA /* MainRouter.swift */; };
 		FC49C0641FD7266500C71442 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FC49C05F1FD7266500C71442 /* README.md */; };
 		FC49C0651FD7266500C71442 /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = FC49C0611FD7266500C71442 /* Appfile */; };
@@ -90,6 +91,7 @@
 		68DD1BC63E7C8CDC080342D0 /* Pods_CaronaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaronaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		865159CD201A0A5C005E0663 /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 		865159CF201A0E87005E0663 /* AppDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateTests.swift; sourceTree = "<group>"; };
+		86C0CE2B201A16C7001687C0 /* SnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotTests.swift; sourceTree = "<group>"; };
 		86FFA25C201A05AD00B820BA /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		88F5738563358F098408BB47 /* Pods_CaronaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaronaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC272475C6D9B44A7825071 /* Pods-CaronaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaronaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CaronaUITests/Pods-CaronaUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 			children = (
 				435F9D791FDAB9AA00100135 /* SnapshotHelper.swift */,
 				FC4E3BEA1FD721FD00CA32F0 /* CaronaUITests.swift */,
+				86C0CE2B201A16C7001687C0 /* SnapshotTests.swift */,
 				FC4E3BEC1FD721FD00CA32F0 /* Info.plist */,
 			);
 			path = CaronaUITests;
@@ -570,12 +573,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Carona/Pods-Carona-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ConfigurationProvider/ConfigurationProvider.framework",
+				"${BUILT_PRODUCTS_DIR}/LaunchApplication/LaunchApplication.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/UIColor_Hex_Swift/UIColor_Hex_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ConfigurationProvider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LaunchApplication.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIColor_Hex_Swift.framework",
 			);
@@ -740,6 +745,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC4E3BEB1FD721FD00CA32F0 /* CaronaUITests.swift in Sources */,
+				86C0CE2C201A16C7001687C0 /* SnapshotTests.swift in Sources */,
 				435F9D7A1FDAB9AA00100135 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

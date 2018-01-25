@@ -37,5 +37,12 @@ class MainRouter: UITabBarController {
             window.rootViewController = self
         }
     }
+    
+    /// Carrega as telas do app
+    func loadScreens() {
+        let controller = mainStoryBoard.instantiateViewController(withIdentifier: "HomeViewController")
+        controller.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
+        viewControllers = [UINavigationController(rootViewController: controller)]
+    }
 
 }

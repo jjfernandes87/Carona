@@ -1,5 +1,6 @@
 PODS:
   - ConfigurationProvider (0.0.10)
+  - LaunchApplication (0.0.2)
   - NVActivityIndicatorView (4.1.1):
     - NVActivityIndicatorView/Presenter (= 4.1.1)
   - NVActivityIndicatorView/Presenter (4.1.1)
@@ -7,14 +8,16 @@ PODS:
 
 DEPENDENCIES:
   - ConfigurationProvider
+  - LaunchApplication
   - NVActivityIndicatorView
   - UIColor_Hex_Swift
 
 SPEC CHECKSUMS:
   ConfigurationProvider: 0835ec4ad993e84e9f2f91b20caf302abc6a8543
+  LaunchApplication: 80accc5b81531c866db5b9822a965efb8dde4a07
   NVActivityIndicatorView: 60109b9bf46efc2e71ab81453196ccdfdfeea870
   UIColor_Hex_Swift: c5ff88470499383b8fd85302d59344bb24ba9436
 
-PODFILE CHECKSUM: 7363d0de75c1527dc38113291a97df5e94a21515
+PODFILE CHECKSUM: 4622438550a577b3be64ac1602efbe1ede3df743
 
 COCOAPODS: 1.4.0
