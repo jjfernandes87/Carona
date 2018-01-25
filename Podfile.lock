@@ -1,5 +1,10 @@
 PODS:
   - ConfigurationProvider (0.0.10)
+  - GoogleMaps (2.5.0):
+    - GoogleMaps/Maps (= 2.5.0)
+  - GoogleMaps/Base (2.5.0)
+  - GoogleMaps/Maps (2.5.0):
+    - GoogleMaps/Base
   - LaunchApplication (0.0.2)
   - NVActivityIndicatorView (4.1.1):
     - NVActivityIndicatorView/Presenter (= 4.1.1)
@@ -8,16 +13,18 @@ PODS:
 
 DEPENDENCIES:
   - ConfigurationProvider
+  - GoogleMaps
   - LaunchApplication
   - NVActivityIndicatorView
   - UIColor_Hex_Swift
 
 SPEC CHECKSUMS:
   ConfigurationProvider: 0835ec4ad993e84e9f2f91b20caf302abc6a8543
+  GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
   LaunchApplication: 80accc5b81531c866db5b9822a965efb8dde4a07
   NVActivityIndicatorView: 60109b9bf46efc2e71ab81453196ccdfdfeea870
   UIColor_Hex_Swift: c5ff88470499383b8fd85302d59344bb24ba9436
 
-PODFILE CHECKSUM: 4622438550a577b3be64ac1602efbe1ede3df743
+PODFILE CHECKSUM: 1a1d31fc16c66d485539126d93c34547ce868c94
 
 COCOAPODS: 1.4.0

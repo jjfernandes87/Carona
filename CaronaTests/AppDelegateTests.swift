@@ -34,4 +34,8 @@ class AppDelegateTests: XCTestCase {
         appdelegate.initMainRouter()
         XCTAssertNotNil(appdelegate.mainRouter, "appdelegate.mainRouter = instanciada")
     }
+    
+    func testLaunchCount() {
+        XCTAssertEqual(appdelegate.appSequence.launchSequence.count, 1, "Quantidade de itens de inicialização = 1")
+    }
 }

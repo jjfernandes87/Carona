@@ -40,7 +40,7 @@ class MainRouter: UITabBarController {
     
     /// Carrega as telas do app
     func loadScreens() {
-        let controller = mainStoryBoard.instantiateViewController(withIdentifier: "HomeViewController")
+        let controller = mainStoryBoard.instantiateViewController(withIdentifier: "MapsViewController") as! MapsViewController
         controller.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
         viewControllers = [UINavigationController(rootViewController: controller)]
     }

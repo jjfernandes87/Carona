@@ -23,27 +23,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="111" y="133"/>
         </scene>
-        <!--View Controller-->
+        <!--Maps View Controller-->
         <scene sceneID="gZ3-Gn-QW2">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n9I-LB-A6U" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n9I-LB-A6U" customClass="MapsViewController" customModule="Carona" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EZW-tp-9x6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZo-0v-LtI">
-                                <rect key="frame" x="168" y="323" width="39" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="nZo-0v-LtI" firstAttribute="centerY" secondItem="EZW-tp-9x6" secondAttribute="centerY" id="04R-54-gpk"/>
-                            <constraint firstItem="nZo-0v-LtI" firstAttribute="centerX" secondItem="EZW-tp-9x6" secondAttribute="centerX" id="9BA-hZ-fQp"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="21a-qB-VVT"/>
                     </view>
                 </viewController>

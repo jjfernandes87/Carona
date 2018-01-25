@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import LaunchApplication
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var mainRouter: MainRouter?
+    var appSequence = LaunchApp()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -24,9 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
-            self.mainRouter?.loadScreens()
-        }
+        appSequence.launchWithDelegate(delegate: self)
+    }
+}
+
+// MARK: - LaunchApplicationProtocol methods
+extension AppDelegate: LaunchApplicationProtocol {
+    func didFinishLaunchSequence(application: LaunchApplication) {
+        self.mainRouter?.loadScreens()
     }
 }
 

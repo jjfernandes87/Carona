@@ -19,10 +19,4 @@ class CaronaUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testInitalApp() {
-        let app = XCUIApplication()
-        app.launch()
-        sleep(3)
-        XCTAssertTrue(app.staticTexts["Hello"].exists)
-    }
 }

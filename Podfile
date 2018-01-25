@@ -10,7 +10,8 @@ target 'Carona' do
   pod 'LaunchApplication'
   pod 'UIColor_Hex_Swift'
   pod 'NVActivityIndicatorView'
-
+  pod 'GoogleMaps'
+  
   target 'CaronaTests' do
     inherit! :search_paths
     # Pods for testing

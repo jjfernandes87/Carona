@@ -4,8 +4,11 @@
 <dict>
 	<key>dev</key>
 	<dict>
-		<key>name</key>
-		<string>dev</string>
+		<key>GMSServices</key>
+		<dict>
+			<key>key</key>
+			<string>AIzaSyDCINNJKBWxkJG9HCmvo9lsswpfv9DCYYw</string>
+		</dict>
 		<key>Styles</key>
 		<dict>
 			<key>tabBarTintColor</key>
@@ -14,8 +17,11 @@
 	</dict>
 	<key>prod</key>
 	<dict>
-		<key>name</key>
-		<string>prod</string>
+		<key>GMSServices</key>
+		<dict>
+			<key>key</key>
+			<string>AIzaSyDCINNJKBWxkJG9HCmvo9lsswpfv9DCYYw</string>
+		</dict>
 		<key>Styles</key>
 		<dict>
 			<key>tabBarTintColor</key>

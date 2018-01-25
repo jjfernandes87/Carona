@@ -17,6 +17,8 @@
 		865159CE201A0A5C005E0663 /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865159CD201A0A5C005E0663 /* EmptyViewController.swift */; };
 		865159D0201A0E87005E0663 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865159CF201A0E87005E0663 /* AppDelegateTests.swift */; };
 		86C0CE2C201A16C7001687C0 /* SnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C0CE2B201A16C7001687C0 /* SnapshotTests.swift */; };
+		86C0CE30201A1FB4001687C0 /* LaunchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C0CE2F201A1FB4001687C0 /* LaunchApp.swift */; };
+		86C0CE32201A2191001687C0 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C0CE31201A2191001687C0 /* MapsViewController.swift */; };
 		86FFA25D201A05AD00B820BA /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FFA25C201A05AD00B820BA /* MainRouter.swift */; };
 		FC49C0641FD7266500C71442 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FC49C05F1FD7266500C71442 /* README.md */; };
 		FC49C0651FD7266500C71442 /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = FC49C0611FD7266500C71442 /* Appfile */; };
@@ -92,6 +94,8 @@
 		865159CD201A0A5C005E0663 /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 		865159CF201A0E87005E0663 /* AppDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateTests.swift; sourceTree = "<group>"; };
 		86C0CE2B201A16C7001687C0 /* SnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotTests.swift; sourceTree = "<group>"; };
+		86C0CE2F201A1FB4001687C0 /* LaunchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchApp.swift; sourceTree = "<group>"; };
+		86C0CE31201A2191001687C0 /* MapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
 		86FFA25C201A05AD00B820BA /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		88F5738563358F098408BB47 /* Pods_CaronaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaronaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC272475C6D9B44A7825071 /* Pods-CaronaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaronaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CaronaUITests/Pods-CaronaUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -195,8 +199,25 @@
 			isa = PBXGroup;
 			children = (
 				865159CD201A0A5C005E0663 /* EmptyViewController.swift */,
+				86C0CE31201A2191001687C0 /* MapsViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		86C0CE2D201A1F7C001687C0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				86C0CE2E201A1F85001687C0 /* Helpers */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		86C0CE2E201A1F85001687C0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				86C0CE2F201A1FB4001687C0 /* LaunchApp.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		86FFA258201A038900B820BA /* ApplicationBase */ = {
@@ -275,6 +296,7 @@
 		FC4E3BC91FD721FD00CA32F0 /* Carona */ = {
 			isa = PBXGroup;
 			children = (
+				86C0CE2D201A1F7C001687C0 /* Components */,
 				865159CC201A0A42005E0663 /* ViewControllers */,
 				86FFA25B201A058300B820BA /* Routers */,
 				FC4E3BD11FD721FD00CA32F0 /* Assets.xcassets */,
@@ -709,9 +731,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Carona/Pods-Carona-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -725,8 +750,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86C0CE32201A2191001687C0 /* MapsViewController.swift in Sources */,
 				865159CE201A0A5C005E0663 /* EmptyViewController.swift in Sources */,
 				FC4E3BCB1FD721FD00CA32F0 /* AppDelegate.swift in Sources */,
+				86C0CE30201A1FB4001687C0 /* LaunchApp.swift in Sources */,
 				86FFA25D201A05AD00B820BA /* MainRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
