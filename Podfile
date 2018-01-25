@@ -6,7 +6,9 @@ target 'Carona' do
   use_frameworks!
 
   # Pods for Carona
-  pod 'ConfigurationProvider', :git => 'https://github.com/jjfernandes87/ConfigurationProvider.git'
+  pod 'ConfigurationProvider'
+  pod 'UIColor_Hex_Swift'
+  pod 'NVActivityIndicatorView'
 
   target 'CaronaTests' do
     inherit! :search_paths
