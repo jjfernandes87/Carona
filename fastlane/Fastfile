@@ -15,8 +15,7 @@ lane :coverage do
     slather(scheme: "Carona-Debug",
             workspace: "Carona.xcworkspace",
             html: true,
-            show: true,
-            verbose: true)
+            show: true)
 end
 
 desc "Runs all the tests"
