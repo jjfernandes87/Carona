@@ -1,0 +1,6 @@
+# .slather.yml
+
+coverage_service: cobertura_xml
+xcodeproj: Carona.xcodeproj
+workspace: Carona.xcworkspace
+scheme: Carona-Debug

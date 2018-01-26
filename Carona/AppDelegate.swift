@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 // MARK: - LaunchApplicationProtocol methods
 extension AppDelegate: LaunchApplicationProtocol {
     func didFinishLaunchSequence(application: LaunchApplication) {
-        self.mainRouter?.loadScreens()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) { self.mainRouter?.loadScreens() }
     }
 }
 
