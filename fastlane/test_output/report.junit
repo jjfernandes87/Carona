@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <testsuites name='CaronaTests.xctest' tests='6' failures='0'>
   <testsuite name='CaronaUITests.SnapshotTests' tests='1' failures='0'>
-    <testcase classname='CaronaUITests.SnapshotTests' name='testExample' time='7.392'/>
+    <testcase classname='CaronaUITests.SnapshotTests' name='testExample' time='6.776'/>
   </testsuite>
   <testsuite name='CaronaTests.AppDelegateTests' tests='3' failures='0'>
-    <testcase classname='CaronaTests.AppDelegateTests' name='testInitRouter' time='0.004'/>
+    <testcase classname='CaronaTests.AppDelegateTests' name='testInitRouter' time='0.002'/>
     <testcase classname='CaronaTests.AppDelegateTests' name='testInitWindow' time='0.002'/>
     <testcase classname='CaronaTests.AppDelegateTests' name='testLaunchCount' time='0.001'/>
   </testsuite>
   <testsuite name='CaronaTests.CaronaTests' tests='2' failures='0'>
     <testcase classname='CaronaTests.CaronaTests' name='testExample' time='0.000'/>
-    <testcase classname='CaronaTests.CaronaTests' name='testPerformanceExample' time='0.283'/>
+    <testcase classname='CaronaTests.CaronaTests' name='testPerformanceExample' time='0.312'/>
   </testsuite>
 </testsuites>
