@@ -6,10 +6,6 @@ default_platform :ios
 
 platform :ios do
 
-    before_all do
-        update_fastlane(nightly: true)  
-    end
-
     lane :certificates do
         match(git_url: "https://github.com/jjfernandes87/Certificates.git", type: "development", app_identifier: "br.com.jjfernandes87.Carona", readonly: true)
         match(git_url: "https://github.com/jjfernandes87/Certificates.git", type: "appstore", app_identifier: "br.com.jjfernandes87.Carona", readonly: true)
@@ -17,7 +13,7 @@ platform :ios do
 
     desc "Runs all the tests"
     lane :test do
-        scan(scheme: "Carona - Debug")
+        scan(scheme: "Carona-Debug")
 
         # notification
         slack(
@@ -46,7 +42,7 @@ platform :ios do
         build_number = increment_build_number(xcodeproj: "Carona.xcodeproj")
 
         # build your iOS app
-        gym(scheme: "Carona - Release", workspace: "Carona.xcworkspace", include_bitcode: true)
+        gym(scheme: "Carona-Release", workspace: "Carona.xcworkspace", include_bitcode: true)
 
         # upload to Testflight
         upload_to_testflight(skip_waiting_for_build_processing: true)
@@ -72,7 +68,7 @@ platform :ios do
         build_number = increment_build_number(xcodeproj: "Carona.xcodeproj")
 
         # build your iOS app
-        build_app(scheme: "Carona - Release", workspace: "Carona.xcworkspace", include_bitcode: true)
+        build_app(scheme: "Carona-Release", workspace: "Carona.xcworkspace", include_bitcode: true)
 
         # Upload the build to iTunes Connect.
         update_app_info(skip_screenshots: false, skip_metadata: false, submit_for_review: true)
