@@ -1,8 +1,10 @@
 language: objective-c
 osx_image: xcode9.1
+
 cache:
 - bundler
 - cocoapods
+
 before_install:
 - bundle install
 - pod repo update
