@@ -4,149 +4,163 @@ generated_fastfile_id "374a945e-9ada-4130-a843-eb8e4b220bd3"
 
 default_platform :ios
 
-desc "Create certificates"
-lane :certificates do
-    match(git_url: "https://github.com/jjfernandes87/Certificates.git", type: "development", app_identifier: "br.com.jjfernandes87.Carona", readonly: true)
-    match(git_url: "https://github.com/jjfernandes87/Certificates.git", type: "appstore", app_identifier: "br.com.jjfernandes87.Carona", readonly: true)
+platform :ios do
+
+    before_all do
+        update_fastlane(nightly: true)  
+    end
+
+    lane :certificates do
+        match(git_url: "https://github.com/jjfernandes87/Certificates.git", type: "development", app_identifier: "br.com.jjfernandes87.Carona", readonly: true)
+        match(git_url: "https://github.com/jjfernandes87/Certificates.git", type: "appstore", app_identifier: "br.com.jjfernandes87.Carona", readonly: true)
+    end
+
+    desc "Runs all the tests"
+    lane :test do
+        scan(scheme: "Carona - Debug")
+
+        # notification
+        slack(
+            message: "Running all the tests was successfully.",
+            channel: "#build_ios",
+            success: true,
+            slack_url: "https://hooks.slack.com/services/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",
+            default_payloads: [:git_branch, :last_git_commit_message]
+        )
+
+    end
+
+    desc "Runs Coverage"
+    lane :coverage do
+        slather(scheme: "Carona-Debug", workspace: "Carona.xcworkspace", html: true, show: true)
+    end
+
+    desc "Submit a new Beta Build to Apple TestFlight"
+    desc "This will also make sure the profile is up to date"
+    lane :beta do
+        
+        # Ensure that your git status is not dirty
+        ensure_git_status_clean
+
+        # increment_build_number
+        build_number = increment_build_number(xcodeproj: "Carona.xcodeproj")
+
+        # build your iOS app
+        gym(scheme: "Carona - Release", workspace: "Carona.xcworkspace", include_bitcode: true)
+
+        # upload to Testflight
+        upload_to_testflight(skip_waiting_for_build_processing: true)
+
+        # commit action
+        commit_info(build_number: "#{build_number}", remote_branch: "develop")
+    
+        # notification
+        slack_notification(build_number: "#{build_number}", remote_branch: "develop", message: "App successfully uploaded to Testflight.")
+
+    end
+
+    desc "Deploy a new version to the App Store"
+    lane :release do
+        
+        # Ensure that your git status is not dirty
+        ensure_git_status_clean
+
+        # snapshot
+        capture_screenshots(reinstall_app: true, app_identifier: "br.com.jjfernandes87.Carona", skip_open_summary: true )
+
+        # increment_build_number
+        build_number = increment_build_number(xcodeproj: "Carona.xcodeproj")
+
+        # build your iOS app
+        build_app(scheme: "Carona - Release", workspace: "Carona.xcworkspace", include_bitcode: true)
+
+        # Upload the build to iTunes Connect.
+        update_app_info(skip_screenshots: false, skip_metadata: false, submit_for_review: true)
+
+        # commit action
+        commit_info(build_number: "#{build_number}", remote_branch: "master")
+
+        # notification
+        slack_notification(build_number: "#{build_number}", remote_branch: "master", message: "App successfully uploaded to iTunesConnect.")
+    end
+
+    desc "Take a screenshots"
+    lane :screenshots do
+        capture_screenshots(reinstall_app: true, app_identifier: "br.com.jjfernandes87.Carona", skip_open_summary: true )
+        update_app_info(skip_screenshots: false, skip_metadata: false, submit_for_review: false)
+    end
+
+    private_lane :update_app_info do |options|
+
+        skip_screenshots = options[:skip_screenshots]
+        skip_metadata = options[:skip_metadata]
+        submit_for_review = options[:submit_for_review]
+
+        # Upload the build to iTunes Connect.
+        deliver(
+            force: true,
+            ignore_language_directory_validation: true,
+            skip_binary_upload: true,
+            skip_screenshots: skip_screenshots,
+            skip_metadata: skip_metadata,
+            submit_for_review: submit_for_review
+        )
+    end
+
+    desc "Send info to remote git"
+    private_lane :commit_info do |options|
+        
+        build_number = options[:build_number]
+        remote_branch = options[:remote_branch]
+        
+        # commit to local repo
+        clean_build_artifacts
+        commit_version_bump(message: "Deploying build #{build_number}. [ci skip]", xcodeproj: "ZapPro.xcodeproj", force: true)
+        
+        # add tag
+        add_git_tag(grouping: "builds", prefix: "b_", build_number:"#{build_number}", force: true)
+        
+        # push to remote repo
+        push_to_git_remote(remote: "origin", local_branch: "HEAD", remote_branch: "#{remote_branch}", force: true, tags: true)
+        
+    end
+
+    desc "Send info to remote git"
+    private_lane :slack_notification do |options|
+        
+        message = options[:message]
+        build_number = options[:build_number]
+        remote_branch = options[:remote_branch]
+        
+        # notification
+        slack(
+              message: "#{message}",
+              channel: "#build_ios",
+              success: true,
+              slack_url: "https://hooks.slack.com/services/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",
+              default_payloads: [:git_branch, :last_git_commit_message],
+              attachment_properties: {
+                  fields: [
+                      { title: "Build number", value: "#{build_number}" },
+                      { title: "Remote branch", value: "#{remote_branch}" }
+                  ]
+              }
+        )
+        
+    end
+
+
+    error do |lane, exception|
+      
+        slack(
+            message: "An error occured while running lane",
+            channel: "#build_ios",
+            success: false,
+            slack_url: "https://hooks.slack.com/services/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",
+            default_payloads: [:git_branch, :last_git_commit_message]
+        )
+
+    end
+
 end
-
-desc "Runs Coverage"
-lane :coverage do
-    slather(scheme: "Carona-Debug", workspace: "Carona.xcworkspace", html: true, show: true)
-end
-
-desc "Runs all the tests"
-lane :test do
-    scan(scheme: "Carona-Debug")
-    
-    # notification
-    slack(
-        message: "Running all the tests was successfully.",
-        channel: "#build_ios",
-        success: true,
-        slack_url: "https://hooks.slack.com/services/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",
-        default_payloads: [:git_branch, :last_git_commit_message]
-    )
-
-end
-
-desc "Submit a new Beta Build to Apple TestFlight"
-desc "This will also make sure the profile is up to date"
-lane :beta do
-    
-    # increment_build_number
-    build_number = increment_build_number
-    
-    # build your iOS app
-    gym(scheme: "Carona-Release", workspace: "Carona.xcworkspace", include_bitcode: true)
-    
-    # upload to Testflight
-    upload_to_testflight(skip_waiting_for_build_processing: true)
-    
-    # commit action
-    commit_info(build_number: "#{build_number}", remote_branch: "develop")
-    
-    # notification
-    slack_notification(build_number: "#{build_number}", remote_branch: "develop", message: "App successfully uploaded to Testflight.")
-    
-end
-
-desc "Deploy a new version to the App Store"
-lane :release do
-
-    # snapshot
-    capture_screenshots(reinstall_app: true, app_identifier: "br.com.jjfernandes87.Carona", skip_open_summary: true )
-
-    # increment_build_number
-    build_number = increment_build_number
-
-    # build your iOS app
-    build_app(scheme: "Carona-Release", workspace: "Carona.xcworkspace", include_bitcode: true)
-    
-    # Upload the build to iTunes Connect.
-    update_app_info(skip_screenshots: false, skip_metadata: false, submit_for_review: true)
-    
-    # commit action
-    commit_info(build_number: "#{build_number}", remote_branch: "master")
-    
-    # notification
-    slack_notification(build_number: "#{build_number}", remote_branch: "master", message: "App successfully uploaded to iTunesConnect.")
-    
-end
-
-desc "Take a screenshots"
-lane :screenshots do
-    capture_screenshots(reinstall_app: true, app_identifier: "br.com.jjfernandes87.Carona", skip_open_summary: true )
-    update_app_info(skip_screenshots: false, skip_metadata: false, submit_for_review: false)
-end
-
-desc "Upload the build to iTunes Connect."
-private_lane :update_app_info do |options|
-
-    skip_screenshots = options[:skip_screenshots]
-    skip_metadata = options[:skip_metadata]
-    submit_for_review = options[:submit_for_review]
-
-    deliver(
-        force: true,
-        ignore_language_directory_validation: true,
-        skip_binary_upload: true,
-        skip_screenshots: skip_screenshots,
-        skip_metadata: skip_metadata,
-        submit_for_review: submit_for_review
-    )
-end
-
-desc "Send info to remote git"
-private_lane :commit_info do |options|
-    
-    build_number = options[:build_number]
-    remote_branch = options[:remote_branch]
-    
-    # commit to local repo
-    clean_build_artifacts
-    commit_version_bump(message: "[ci skip] Deploying build #{build_number}.", xcodeproj: "ZapPro.xcodeproj", force: true)
-    
-    # add tag
-    add_git_tag(grouping: "builds", prefix: "b_", build_number:"#{build_number}", force: true)
-    
-    # push to remote repo
-    push_to_git_remote(remote: "origin", local_branch: "HEAD", remote_branch: "#{remote_branch}", force: true, tags: true)
-    
-end
-
-desc "Send info to remote git"
-private_lane :slack_notification do |options|
-    
-    message = options[:message]
-    build_number = options[:build_number]
-    remote_branch = options[:remote_branch]
-    
-    # notification
-    slack(
-          message: "#{message}",
-          channel: "#build_ios",
-          success: true,
-          slack_url: "https://hooks.slack.com/services/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",
-          default_payloads: [:git_branch, :last_git_commit_message],
-          attachment_properties: {
-              fields: [
-                  { title: "Build number", value: "#{build_number}" },
-                  { title: "Remote branch", value: "#{remote_branch}" }
-              ]
-          }
-    )
-    
-end
-
-error do
-    slack(
-        message: "An error occured while running lane",
-        channel: "#build_ios",
-        success: false,
-        slack_url: "https://hooks.slack.com/services/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",
-        default_payloads: [:git_branch, :last_git_commit_message]
-    )
-end
-
 

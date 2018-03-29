@@ -1,6 +1,0 @@
-framework module Pods_CaronaUITests {
-  umbrella header "Pods-CaronaUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
