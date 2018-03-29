@@ -11,18 +11,11 @@ before_install:
 - bundle update
 
 script:
-
 - fastlane test;
 
-if [[ "$TRAVIS_BRANCH" == "develop" ]]; then
-  fastlane beta
-  exit 0
-fi
-
-if [[ "$TRAVIS_BRANCH" == "master" ]]; then
-  fastlane release
-  exit 0
-fi
+after_success:
+- if [[ "$TRAVIS_BRANCH" == "develop" ]]; then fastlane beta; fi
+- if [[ "$TRAVIS_BRANCH" == "master" ]]; then fastlane release; fi
 
 env:
   global:
