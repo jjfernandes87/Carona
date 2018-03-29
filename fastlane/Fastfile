@@ -4,73 +4,81 @@ generated_fastfile_id "374a945e-9ada-4130-a843-eb8e4b220bd3"
 
 default_platform :ios
 
-desc "Runs all the tests"
-lane :test do
-    scan(scheme: "Carona - Debug")
-end
+platform :ios do
 
-desc "Submit a new Beta Build to Apple TestFlight"
-desc "This will also make sure the profile is up to date"
-lane :beta do
-    # Ensure that your git status is not dirty
-    ensure_git_status_clean
+    before_all do
+        update_fastlane(nightly: true)  
+    end
 
-    # increment_build_number
-    build_number = increment_build_number(xcodeproj: "Carona.xcodeproj")
+    desc "Runs all the tests"
+    lane :test do
+        scan(scheme: "Carona - Debug")
+    end
 
-    # build your iOS app
-    gym(scheme: "Carona - Release", workspace: "Carona.xcworkspace", include_bitcode: true)
+    desc "Submit a new Beta Build to Apple TestFlight"
+    desc "This will also make sure the profile is up to date"
+    lane :beta do
+        # Ensure that your git status is not dirty
+        ensure_git_status_clean
 
-    # upload to Testflight
-    changelog_from_git_commits
-    upload_to_testflight(skip_waiting_for_build_processing: true)
+        # increment_build_number
+        build_number = increment_build_number(xcodeproj: "Carona.xcodeproj")
 
-    # Add a git tag for this build. This will automatically
-    # use an appropriate git tag name
-    add_git_tag
+        # build your iOS app
+        gym(scheme: "Carona - Release", workspace: "Carona.xcworkspace", include_bitcode: true)
 
-    # Commit the version bump
-    commit_version_bump(message: "Deploying build #{build_number} to Testflight.", xcodeproj: "Carona.xcodeproj")
+        # upload to Testflight
+        changelog_from_git_commits
+        upload_to_testflight(skip_waiting_for_build_processing: true)
 
-    # Push the new commit and tag back to your git remote
-    push_to_git_remote(force: true)
-end
+        # Add a git tag for this build. This will automatically
+        # use an appropriate git tag name
+        add_git_tag
 
-desc "Deploy a new version to the App Store"
-lane :release do
-    # Ensure that your git status is not dirty
-    ensure_git_status_clean
+        # Commit the version bump
+        commit_version_bump(message: "Deploying build #{build_number} to Testflight.", xcodeproj: "Carona.xcodeproj")
 
-    # snapshot
-    capture_screenshots(reinstall_app: true, app_identifier: "br.com.jjfernandes87.Carona", skip_open_summary: true )
+        # Push the new commit and tag back to your git remote
+        push_to_git_remote(force: true)
+    end
 
-    # build your iOS app
-    build_app(scheme: "Carona - Release", workspace: "Carona.xcworkspace", include_bitcode: true)
+    desc "Deploy a new version to the App Store"
+    lane :release do
+        # Ensure that your git status is not dirty
+        ensure_git_status_clean
 
-    # Upload the build to iTunes Connect.
-    update_app_info(skip_screenshots: false, skip_metadata: false, submit_for_review: true)
-end
+        # snapshot
+        capture_screenshots(reinstall_app: true, app_identifier: "br.com.jjfernandes87.Carona", skip_open_summary: true )
 
-desc "Take a screenshots"
-lane :screenshots do
-    capture_screenshots(reinstall_app: true, app_identifier: "br.com.jjfernandes87.Carona", skip_open_summary: true )
-    update_app_info(skip_screenshots: false, skip_metadata: false, submit_for_review: false)
-end
+        # build your iOS app
+        build_app(scheme: "Carona - Release", workspace: "Carona.xcworkspace", include_bitcode: true)
 
-private_lane :update_app_info do |options|
+        # Upload the build to iTunes Connect.
+        update_app_info(skip_screenshots: false, skip_metadata: false, submit_for_review: true)
+    end
 
-    skip_screenshots = options[:skip_screenshots]
-    skip_metadata = options[:skip_metadata]
-    submit_for_review = options[:submit_for_review]
+    desc "Take a screenshots"
+    lane :screenshots do
+        capture_screenshots(reinstall_app: true, app_identifier: "br.com.jjfernandes87.Carona", skip_open_summary: true )
+        update_app_info(skip_screenshots: false, skip_metadata: false, submit_for_review: false)
+    end
 
-    # Upload the build to iTunes Connect.
-    deliver(
-        force: true,
-        ignore_language_directory_validation: true,
-        skip_binary_upload: true,
-        skip_screenshots: skip_screenshots,
-        skip_metadata: skip_metadata,
-        submit_for_review: submit_for_review
-    )
+    private_lane :update_app_info do |options|
+
+        skip_screenshots = options[:skip_screenshots]
+        skip_metadata = options[:skip_metadata]
+        submit_for_review = options[:submit_for_review]
+
+        # Upload the build to iTunes Connect.
+        deliver(
+            force: true,
+            ignore_language_directory_validation: true,
+            skip_binary_upload: true,
+            skip_screenshots: skip_screenshots,
+            skip_metadata: skip_metadata,
+            submit_for_review: submit_for_review
+        )
+    end
+
 end
 
