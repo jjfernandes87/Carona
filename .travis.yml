@@ -9,7 +9,7 @@ before_install:
 - bundle update
 script:
 - fastlane test;
-- if [ "$TRAVIS_BRANCH" = "desenv" -a "$TRAVIS_PULL_REQUEST" = "true" ]; then fastlane beta; fi
+- if [ "$TRAVIS_BRANCH" = "develop" -a "$TRAVIS_PULL_REQUEST" = "true" ]; then fastlane beta; fi
 - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "true" ]; then fastlane release; fi
 env:
   global:
