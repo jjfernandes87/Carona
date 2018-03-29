@@ -1,8 +1,8 @@
-# frozen_string_literal: true
 Encoding.default_external = Encoding::UTF_8
 Encoding.default_internal = Encoding::UTF_8
 
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'cocoapods'
-gem 'fastlane'
+gem "slather"
+gem "cocoapods"
+gem "fastlane"
