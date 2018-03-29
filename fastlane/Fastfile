@@ -149,10 +149,11 @@ platform :ios do
     error do |lane, exception|
       
         slack(
-            message: "An error occured while running lane",
+            message: exception.to_s,
             channel: "#build_ios",
             success: false,
             slack_url: "https://hooks.slack.com/services/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",
+            payload: { "Output" => exception.error_info.to_s },
             default_payloads: [:git_branch, :last_git_commit_message]
         )
 
