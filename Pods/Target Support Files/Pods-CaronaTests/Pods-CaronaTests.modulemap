@@ -1,6 +1,0 @@
-framework module Pods_CaronaTests {
-  umbrella header "Pods-CaronaTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -1,6 +1,0 @@
-framework module Pods_Carona {
-  umbrella header "Pods-Carona-umbrella.h"
-
-  export *
-  module * { export * }
-}
