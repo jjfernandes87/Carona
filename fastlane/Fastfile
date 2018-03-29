@@ -35,9 +35,6 @@ platform :ios do
     desc "This will also make sure the profile is up to date"
     lane :beta do
         
-        # Ensure that your git status is not dirty
-        ensure_git_status_clean
-
         # increment_build_number
         build_number = increment_build_number(xcodeproj: "Carona.xcodeproj")
 
@@ -58,9 +55,6 @@ platform :ios do
     desc "Deploy a new version to the App Store"
     lane :release do
         
-        # Ensure that your git status is not dirty
-        ensure_git_status_clean
-
         # snapshot
         capture_screenshots(reinstall_app: true, app_identifier: "br.com.jjfernandes87.Carona", skip_open_summary: true )
 
