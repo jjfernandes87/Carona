@@ -15,36 +15,37 @@ Install _fastlane_ using
 or alternatively using `brew cask install fastlane`
 
 # Available Actions
-### certificates
+## iOS
+### ios certificates
 ```
-fastlane certificates
+fastlane ios certificates
 ```
-Create certificates
-### coverage
+
+### ios test
 ```
-fastlane coverage
-```
-Runs Coverage
-### test
-```
-fastlane test
+fastlane ios test
 ```
 Runs all the tests
-### beta
+### ios coverage
 ```
-fastlane beta
+fastlane ios coverage
+```
+Runs Coverage
+### ios beta
+```
+fastlane ios beta
 ```
 Submit a new Beta Build to Apple TestFlight
 
 This will also make sure the profile is up to date
-### release
+### ios release
 ```
-fastlane release
+fastlane ios release
 ```
 Deploy a new version to the App Store
-### screenshots
+### ios screenshots
 ```
-fastlane screenshots
+fastlane ios screenshots
 ```
 Take a screenshots
 
