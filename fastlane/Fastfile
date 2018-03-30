@@ -1,7 +1,6 @@
+import_from_git(url: 'https://github.com/jjfernandes87/Certificates.git', path: 'fastlane/keys')
+
 fastlane_version "2.68.0"
-
-generated_fastfile_id "374a945e-9ada-4130-a843-eb8e4b220bd3"
-
 default_platform :ios
 
 platform :ios do
@@ -20,7 +19,7 @@ platform :ios do
             message: "Running all the tests was successfully.",
             channel: "#build_ios",
             success: true,
-            slack_url: "https://hooks.slack.com/services/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",
+            slack_url: ENV["SLACK_URL"],
             default_payloads: [:git_branch, :last_git_commit_message]
         )
 
@@ -127,7 +126,7 @@ platform :ios do
               message: "#{message}",
               channel: "#build_ios",
               success: true,
-              slack_url: "https://hooks.slack.com/services/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",
+              slack_url: ENV["SLACK_URL"],
               default_payloads: [:git_branch, :last_git_commit_message],
               attachment_properties: {
                   fields: [
@@ -146,7 +145,7 @@ platform :ios do
             message: exception.to_s,
             channel: "#build_ios",
             success: false,
-            slack_url: "https://hooks.slack.com/services/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",
+            slack_url: ENV["SLACK_URL"],
             payload: { "Output" => exception.error_info.to_s },
             default_payloads: [:git_branch, :last_git_commit_message]
         )
