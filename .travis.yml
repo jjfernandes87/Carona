@@ -1,14 +1,9 @@
 language: objective-c
 osx_image: xcode9.1
 
-addons:
-  ssh_known_hosts: github.com:jjfernandes87
-
 cache:
 - bundler
 - cocoapods
-
-before_script: 'echo -e "Host *\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config'
 
 before_install:
 - bundle install
