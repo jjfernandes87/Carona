@@ -104,7 +104,7 @@ platform :ios do
         
         # commit to local repo
         clean_build_artifacts
-        commit_version_bump(message: "Deploying build #{build_number}. [ci skip]", xcodeproj: "ZapPro.xcodeproj", force: true)
+        commit_version_bump(message: "Deploying build #{build_number}. [ci skip]", xcodeproj: "Carona.xcodeproj", force: true)
         
         # add tag
         add_git_tag(grouping: "builds", prefix: "b_", build_number:"#{build_number}", force: true)
