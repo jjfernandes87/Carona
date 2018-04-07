@@ -12,8 +12,6 @@ before_install:
 
 script:
 - fastlane test;
-- if [[ "$TRAVIS_BRANCH" == "develop" ]]; then fastlane beta; fi
-- if [[ "$TRAVIS_BRANCH" == "master" ]]; then fastlane release; fi
 
 env:
   global:

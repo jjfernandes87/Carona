@@ -39,13 +39,11 @@ extension AppDelegate: LaunchApplicationProtocol {
 
 extension AppDelegate {
     
-    /// Inicia a window
     func initWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
     }
     
-    /// Inicia a rota base
     func initMainRouter() {
         mainRouter = MainRouter(window: window)
     }
@@ -53,5 +51,6 @@ extension AppDelegate {
     func runApp() {
         mainRouter?.run()
     }
+    
 }
 

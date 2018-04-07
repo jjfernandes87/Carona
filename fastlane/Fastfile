@@ -1,4 +1,4 @@
-import_from_git(url: 'https://github.com/jjfernandes87/Certificates.git', path: 'fastlane/keys')
+ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
 
 fastlane_version "2.68.0"
 default_platform :ios

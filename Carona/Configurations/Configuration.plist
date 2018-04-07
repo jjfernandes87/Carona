@@ -9,6 +9,11 @@
 			<key>key</key>
 			<string>AIzaSyDCINNJKBWxkJG9HCmvo9lsswpfv9DCYYw</string>
 		</dict>
+		<key>AppCenter</key>
+		<dict>
+			<key>key</key>
+			<string>b3e58e92-f45d-4252-805e-b26d97eba87f</string>
+		</dict>
 		<key>Styles</key>
 		<dict>
 			<key>tabBarTintColor</key>
@@ -21,6 +26,11 @@
 		<dict>
 			<key>key</key>
 			<string>AIzaSyDCINNJKBWxkJG9HCmvo9lsswpfv9DCYYw</string>
+		</dict>
+		<key>AppCenter</key>
+		<dict>
+			<key>key</key>
+			<string>b3e58e92-f45d-4252-805e-b26d97eba87f</string>
 		</dict>
 		<key>Styles</key>
 		<dict>
