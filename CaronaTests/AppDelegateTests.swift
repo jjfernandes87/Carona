@@ -36,6 +36,6 @@ class AppDelegateTests: XCTestCase {
     }
     
     func testLaunchCount() {
-        XCTAssertEqual(appdelegate.appSequence.launchSequence.count, 1, "Quantidade de itens de inicialização = 1")
+        XCTAssertEqual(appdelegate.appSequence.launchSequence.count, 2, "Quantidade de itens de inicialização = 1")
     }
 }
